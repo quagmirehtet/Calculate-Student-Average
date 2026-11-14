@@ -1,0 +1,99 @@
+How many grade (1 to 5 ) ?  --> 3 
+
+Enter grade : 1 
+Enter grade : 2
+Enter grade : 3
+
+if number of grade exceeds 1 and 5 ," invalid input "
+
+To calculate average value , The formula is -->( num 1 + num 2) / 2
+
+
+
+numberOfGrade ---> i=  1 , 2 , 3 , 4 , 5 
+
+i > numberOfGrade
+
+i + 1
+
+
+numberOfGrade = 2 ,       
+
+enterGrade 1 = 44
+
+
+enterGrade 2 =45
+
+
+enterGrade 3 =98
+
+ totalAvg =  ( enterGrade 1+ enterGrade 2 + enterGrade 3 )/ numberOfGrade 
+ 
+ wrong output
+ 
+ How many grade (1 to 5) ? :4                    
+Enter grade :1
+Average :4
+Average :5
+Enter grade :2
+Average :4
+Average :5
+Enter grade :3
+Average :4
+Average :5
+Enter grade :5
+Average :4
+Average :5
+
+
+How many grade (1 to 5) ? :2
+Enter grade :1
+Average :1
+Average :2
+Enter grade :2
+Average :1
+Average :2
+
+This is very close to what I expected,
+
+How many grade (1 to 5) ? :2
+Enter grade :1
+Enter grade :2
+Average :1
+Average :2
+
+Total Average = enterGrade + Total Average / numberOfGrade ; enterGrade = 1 , 2
+
+This output is still wrong ,
+
+ How many grade (1 to 5) ? :3
+Enter grade :85
+Enter grade :91
+Enter grade :78
+26.0
+34.666666666666664
+37.55555555555555
+
+totalAvg = totalAvg + enterGrade ;
+1           0              1
+ 
+ totalAvg = totalAvg + enterGrade;
+ 2           1             1 
+ 
+ totalAvg = totalAvg + enterGrade;
+ 
+ 3             2           1
+ 
+ 
+   C >= 0 && C >= 59    B >= 60 && B <=69   A >= 70  && A <= 100
+   
+   How many grade (1 to 5) ? :3
+Enter grade :85
+Letter Grade A
+Enter grade :91
+Invalid Input
+Enter grade :78
+Invalid Input
+Total average :84.66666666666667
+   
+ 

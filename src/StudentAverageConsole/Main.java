@@ -3,24 +3,6 @@ package StudentAverageConsole;
 import java.util.*;
 
 public class Main {
-	
-	public static char calculateAvgGrade(double grade) {
-		
-	if(grade >=90 &&  grade < 100) return 'A';
-	
-	else if(grade >= 80 ) return 'B';
-	
-	
-	else if(grade >=70) return 'C';
-	
-	
-	else return 'D';
-		
-		
-		
-	
-		
-	}
 
 	public static void main(String[] args) {
 
@@ -31,9 +13,8 @@ public class Main {
 		scanner.nextLine();
 
 		double totalAvg = 0.0;
- 
 
-		
+		String ans = "";
 
 		if (numberOfGrade < 1 || numberOfGrade > 5) {
 
@@ -41,33 +22,40 @@ public class Main {
 
 			scanner.close();
 
-			return; 
+			return;
 
 		}
 
 		for (int i = 1; i <= numberOfGrade; i++) {
 
-			System.out.print("Enter grade :");
-			double enterGrade = scanner.nextDouble();
-			scanner.nextLine();
+			do {
 
-			totalAvg += enterGrade ;
-			
-		
-			
+				try {
+					System.out.println("Enter grade :");
+					double enterGrade = scanner.nextDouble();
+					scanner.nextLine();
+
+					totalAvg += enterGrade;
+				} catch (InputMismatchException e) {
+
+					System.out.println("Invalid input Type.");
+
+				}
+
+				ServiceGrade.calculateTotalAvg(totalAvg, numberOfGrade);
+
+				char letterGrade = ServiceGrade.calculateAvgGrade(totalAvg);
+
+				System.out.println("Letter Grade :" + letterGrade);
+
+				System.out.println("Do you want to continue (y/n)?");
+				ans = scanner.nextLine().trim();
+
+			} while (ans.equalsIgnoreCase("y"));
+
+			scanner.close();
 
 		}
-		
-		
-		
-		System.out.println("Total average :"+totalAvg/numberOfGrade);
-		
-		char letterGrade=calculateAvgGrade(totalAvg);
-		
-		System.out.println("Letter Grade :"+letterGrade);
-
-		scanner.close();
-
 	}
 
 }

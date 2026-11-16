@@ -8,54 +8,80 @@ public class Main {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.print("How many grade (1 to 5) ? :");
-		int numberOfGrade = scanner.nextInt();
-		scanner.nextLine();
+		
 
-		double totalAvg = 0.0;
 
 		String ans = "";
+		
+		int numberOfGrade=0;
 
-		if (numberOfGrade < 1 || numberOfGrade > 5) {
+	
 
-			System.out.println("Invalid Input");
+		do {
+			
 
-			scanner.close();
+			double totalAvg = 0.0;
 
-			return;
-
-		}
-
-		for (int i = 1; i <= numberOfGrade; i++) {
-
-			do {
-
+			while (true) {
+				
 				try {
-					System.out.println("Enter grade :");
-					double enterGrade = scanner.nextDouble();
+				
+				System.out.print("How many grade (1 to 5) ? :");
+				numberOfGrade = scanner.nextInt();
+				scanner.nextLine();
+				
+				if (numberOfGrade < 1 || numberOfGrade > 5) {
+
+					System.out.println("Invalid Input");
+
+					scanner.close();
+
+					return;
+
+				}
+				
+				}catch(InputMismatchException e) {
+					
+					System.out.println("Enter number only");
 					scanner.nextLine();
+					
+					break;
+					
+				}
 
-					totalAvg += enterGrade;
-				} catch (InputMismatchException e) {
+				for (int i = 1; i <= numberOfGrade; i++) {
 
-					System.out.println("Invalid input Type.");
+					try {
+						System.out.println("Enter grade :");
+						double enterGrade = scanner.nextDouble();
+						scanner.nextLine();
+
+						totalAvg += enterGrade;
+
+					} catch (InputMismatchException e) {
+
+						System.out.println("Invalid input Type.");
+
+					}
 
 				}
 
-				ServiceGrade.calculateTotalAvg(totalAvg, numberOfGrade);
+				double grade = ServiceGrade.calculateTotalAvg(totalAvg, numberOfGrade);
 
-				char letterGrade = ServiceGrade.calculateAvgGrade(totalAvg);
+				System.out.println("Total Grade :"+grade);
+				
+				char letterGrade = ServiceGrade.calculateAvgGrade(grade);
 
 				System.out.println("Letter Grade :" + letterGrade);
 
-				System.out.println("Do you want to continue (y/n)?");
-				ans = scanner.nextLine().trim();
+				break;
+			}
 
-			} while (ans.equalsIgnoreCase("y"));
+			System.out.println("Do you want to continue (y/n)?");
+			ans = scanner.nextLine().trim();
 
-			scanner.close();
+		} while (ans.equalsIgnoreCase("y"));
 
-		}
 	}
 
 }

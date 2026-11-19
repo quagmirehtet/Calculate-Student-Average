@@ -1,0 +1,6 @@
+Grades: [67.0, 97.0] | Average: 82.00 | Letter Grade: B
+Grades: [39.0, 78.0, 95.0] | Average: 70.67 | Letter Grade: C
+Grades: [34.0, 12.0, 78.0, 89.0] | Average: 53.25 | Letter Grade: D
+Grades: [88.0, 77.0, 99.0, 97.0, 99.0] | Average: 92.00 | Letter Grade: A
+Grades: [45.0, 99.0]      | Average: 72.00 | Letter Grade: C
+Grades: [45.0, 89.0, 34.0, 23.0] | Average: 47.75 | Letter Grade: D

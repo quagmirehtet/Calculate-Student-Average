@@ -2,11 +2,13 @@ package StudentAverageConsole;
 
 import java.util.*;
 
+import FileHandlingForStudentGrade.GradeFileService;
+
 public class Main {
 
 	public static void main(String[] args) {
-		
-		Scanner scanner=new Scanner(System.in);
+
+		Scanner scanner = new Scanner(System.in);
 
 		String ans = "";
 
@@ -18,12 +20,19 @@ public class Main {
 			double average = ServiceGrade.calculateTotalAvg(model);
 
 			System.out.println("Average Grade: " + average);
-			System.out.println("Letter Grade: " + ServiceGrade.calculateAvgGrade(average));
+
+			char letterGrade = ServiceGrade.calculateAvgGrade(average);
+
+			System.out.println("Letter Grade: " + letterGrade);
+
+			GradeFileService.saveResult(model, average, letterGrade);
 
 			System.out.print("Do you want to continue (y/n)? ");
 			ans = scanner.nextLine().trim();
 
 		} while (ans.equalsIgnoreCase("y"));
+		
+		GradeFileService.showHistory();
 
 	}
 
